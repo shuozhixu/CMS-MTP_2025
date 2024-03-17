@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+#SBATCH --partition=RM
+#SBATCH --nodes=1
+#SBATCH --ntasks=32
+#SBATCH --time=72:00:00
+#SBATCH --output=lmp.out
+#SBATCH --error=lmp.err
+
+
+#
+#################################################
+
+# Defining the executable and scratch directory
+
+cd ${SLURM_SUBMIT_DIR}
+
+#module load intel/18
+#module load LAMMPS/11Aug17-gompi-2017b
+#/bin/hostname
+
+module load intelmpi/2021.3.0-intel2021.3.0 gcc/10.2.0 cuda/11.7.1 
+
+#module load intel/2021.3.0
+
+# execute lammps
+echo "begin lammps"
+echo "the job is ${SLURM_JOB_ID}"
+
+mpirun -np $SLURM_NPROCS ~/lammps-mtp/interface-lammps-mlip-2/lmp_intel_cpu_intelmpi  -in lmp.in
+
+echo "lammps out"
+

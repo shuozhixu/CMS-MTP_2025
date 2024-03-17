@@ -1,0 +1,78 @@
+#Shuozhi Xu, OU
+
+# ------------------- INITIALIZE -------------------------------
+units           metal
+boundary        p p p
+atom_style      atomic
+
+# ------------------- ATOM DEFINE ------------------------------
+
+#read_data	data.MoNbTa_CSRO
+
+variable        xl equal 0
+variable        xh equal 20
+variable        yl equal 0
+variable        yh equal 20
+variable        zl equal 0
+variable        zh equal 20
+
+lattice         bcc 3.3 orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
+region          mybox block ${xl} ${xh} ${yl} ${yh} ${zl} ${zh}
+
+create_box      5 mybox
+
+mass 1 180.948
+mass 2 92.9064
+mass 3 50.9415
+mass 4 95.94
+mass 5 183.84
+
+create_atoms    1 box
+set type 1 type/ratio 2 0.3333 134
+set type 1 type/ratio 4 0.5 384
+
+# ------------------- FIELD DEFINE -----------------------------
+pair_style        mlip mlip.ini
+pair_coeff        * *
+
+neighbor        0.3     bin
+#neigh_modify    one   200 page 200
+
+# ------------------- SETTINGS ---------------------------------
+#### Computes Required
+
+variable r equal 0.8
+
+change_box all x scale $r y scale $r z scale $r remap
+
+variable a loop 400
+
+label loop
+
+variable b equal $r+$a*0.001
+
+variable c equal $r+($a-1)*0.001
+
+variable d equal $b/$c
+
+change_box all x scale $d y scale $d z scale $d remap
+
+thermo          1
+thermo_style    custom step lx ly lz pe etotal
+
+variable lat_para equal (lx/(10*sqrt(6.))+ly/(46*sqrt(3.)/2.)+lz/(14*sqrt(2.)))/3.
+
+variable eatom equal etotal/count(all)
+
+# ------------------- EQUILIBRATE -----------------------
+
+#run 0
+
+#print "${lat_para} ${eatom}" file a_E
+fix 1 all print 1 "$b ${lat_para} ${eatom}" append a_E screen no title ""
+
+run 1
+unfix 1
+next a
+
+jump lmp_0K.in loop
