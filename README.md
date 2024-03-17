@@ -11,9 +11,11 @@ Through this project, we aim to answer the following two questions:
 - How does CSRO affect USFEs across MEAs?
 - In each MEA, are the two chemical potential differences unique?
 
-Here, we will investigate four MEAs, including MoNbTa, MoNbV, NbTaV, and NbVW. These MEAs were chosen for their stable BCC structures. The USFEs of the four MEAs have been calculated by DFT using their random structures, as
+Here, we will investigate four MEAs, including MoNbTa, MoNbV, NbTaV, and NbVW. These MEAs were chosen for their stable BCC structures. The USFEs of the four MEAs have been calculated using their random structures, as
 
-- [MoNbTa](https://doi.org/10.3390/modelling5010019): 1055 mJ/m<sup>2</sup>
+- MoNbTa
+	- [DFT](https://doi.org/10.3390/modelling5010019): 1055 mJ/m<sup>2</sup>
+	- MTP: 
 - [MoNbV](https://doi.org/10.1063/5.0157728): 1046 mJ/m<sup>2</sup>
 - [NbTaV](https://doi.org/10.1016/j.commatsci.2024.112886): 644 mJ/m<sup>2</sup>
 - [NbVW](https://doi.org/10.1063/5.0157728): 1008 mJ/m<sup>2</sup>
