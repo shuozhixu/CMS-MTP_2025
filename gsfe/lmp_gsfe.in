@@ -1,4 +1,4 @@
-#This is the file to calculate the <111> GSFE curve. Along this curve, there are 101 data points. orient [11-2] [111] [1-10], x, y, z
+#This is the file to calculate the <111> GSFE curve on a {110} plane.
 
 #shell   mkdir      dump
 
@@ -25,7 +25,7 @@ region          mybox block ${xl} ${xh} ${yl} ${yh} ${zl} ${zh}
 
 create_box      5 mybox
 
-read_data	data.MoNbTa
+read_data	data.MoNbTa_CSRO
 
 mass 1 180.948 # Ta
 mass 2 92.9064 # Nb
@@ -33,8 +33,6 @@ mass 3 50.9415 # V
 mass 4 95.94 # Mo
 mass 5 183.84 # W
 
-variable	sca equal 0.99
-change_box	all x scale ${sca} y scale ${sca} z scale ${sca} remap
 variable        latparam equal 3.3
 
 # ------------------- FIELD DEFINE -----------------------------

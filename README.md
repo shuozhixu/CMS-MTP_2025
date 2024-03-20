@@ -61,25 +61,34 @@ The file `lmp_psc.batch` can be used to submit a LAMMPS simulation. Remember to 
 
 The first step is to build the CSRO MoNbTa structure using a a hybrid molecular dynamics (MD) / Monte Carlo (MC) simulation. For that, we run a LAMMPS simulation using `data.random`, `lmp_MoNbTa.in`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. All five files can be found in this GitHub repository. The first two files can be found in the `csro/` directory while the last two in the `MTP/` directory.
 
-Once the simulation is finished, we will find a file `data.MoNbTa`, which will used later.
+Once the simulation is finished, we will find a file `data.MoNbTa_CSRO`, which will used later.
 
-#### Calculate the lattice parameter
+#### Lattice parameter
 
-Run a LAMMPS simulation with files `lmp_0K.in`, `data.MoNbTa`, `lmp_sgc.batch`, `fitted.mtp`, and `mlip.ini`. The first file can be found in the `lat_para/` directory in this GitHub repository.
+The lattice parameter of HfNbTa can be calculated by
 
-Once the simulation is finished, we will find a new file `a_E`. Then run `sh min.sh`. We will see three numbers on the screen. The second number is the actual lattice parameter; let's call it $a_0$. The first number is the ratio of the actual lattice parameter to the trail lattice parameter; let's call it $r_0$.
+	(lx/(10*sqrt(6.))+ly/(46*sqrt(3.)/2.)+lz/(14*sqrt(2.)))/3.
+	
+where
+
+	lx = xhi - xlo
+	ly = yhi - ylo
+	lz = zhi - zlo
+
+where `lx`, `ly`, and `lz` can be found in the first few lines of the data file `data.HfNbTa_CSRO`.
+
+Let's denote the lattice parameter as $a_0$.
 
 #### Generalized stacking fault energy (GSFE)
 
 ##### Plane 1
 
 The simulation requires files 
-`lmp_gsfe.in`, `data.MoNbTa`, `lmp_sgc.batch`, `fitted.mtp`, and `mlip.ini`. The first file can be found in the `gsfe/` directory in this GitHub repository.
+`lmp_gsfe.in`, `data.MoNbTa_CSRO`, `lmp_sgc.batch`, `fitted.mtp`, and `mlip.ini`. The first file can be found in the `gsfe/` directory in this GitHub repository.
 
 Modify `lmp_gsfe.in`:
 
-- line 36, replace the number `0.99` by $r_0$
-- line 38, replace the number `3.3` by $a_0$
+- line 36, replace the number `3.3` by $a_0$
 
 Then run the simulation. Once it is finished, we will find a new file `gsfe_ori`. Run
 
@@ -116,7 +125,7 @@ Once all simulations are finished, for the two MEAs assigned to you, you are req
 - The lattice parameters of the two MEAs
 - All 20 `gsfe` files for each of the two MEAs
 - The mean USFEs of the two MEAs
-- Files `data.MoNbTa`, `data.MoNbV`, `data.NbTaV`, or `data.NbVW`
+- Files `data.MoNbTa_CSRO`, `data.MoNbV`, `data.NbTaV`, or `data.NbVW`
 - Slides used in your in-class presentation
 
 ## References
