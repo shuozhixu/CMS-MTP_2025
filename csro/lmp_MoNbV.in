@@ -1,0 +1,28 @@
+# ------------------------ INITIALIZATION ----------------------
+units metal
+atom_style atomic
+boundary p p p
+
+read_data data.random
+
+set type 1 type 4
+#set type 3 type 1
+
+# ----------------------- FORCE FIELDS -----------------------
+pair_style mlip mlip.ini
+pair_coeff * *
+# ------------------------- SETTINGS --------------------------
+timestep 0.001
+delete_atoms overlap 2 all all
+velocity all create 300.0 4928459 rot yes dist gaussian
+fix 1 all atom/swap 1 1 114514 300 types 2 3
+fix 2 all atom/swap 1 1 114514 300 types 2 4
+fix 3 all atom/swap 1 1 114514 300 types 3 4
+
+fix temp all npt temp 300 300 0.1 iso 0 0 0.1
+thermo 1000
+thermo_style custom step pe ke etotal time cpu tpcpu
+dump 1 all custom 20000 dump.* id type x y z
+run 120000
+write_data data.MoNbV
+print "all done"

@@ -13,8 +13,6 @@ atom_style      atomic
 
 # ------------------- ATOM DEFINE ------------------------------
 
-variable        latparam equal 3.3             #variable
-
 variable        xl equal 0
 variable        xh equal 2
 variable        yl equal 0
@@ -22,20 +20,22 @@ variable        yh equal 2
 variable        zl equal 0
 variable        zh equal 8
 
-lattice         bcc ${latparam} orient x 1 1 -2 orient y 1 1 1 orient z 1 -1 0
+#lattice         bcc ${latparam} orient x 1 1 -2 orient y 1 1 1 orient z 1 -1 0
 region          mybox block ${xl} ${xh} ${yl} ${yh} ${zl} ${zh}
 
 create_box      5 mybox
 
-mass 1 180.948
-mass 2 92.9064
-mass 3 50.9415
-mass 4 95.94
-mass 5 183.84
+read_data	data.MoNbTa
 
-create_atoms    1 box
-set type 1 type/ratio 2 0.3333 134
-set type 1 type/ratio 4 0.5 384
+mass 1 180.948 # Ta
+mass 2 92.9064 # Nb
+mass 3 50.9415 # V
+mass 4 95.94 # Mo
+mass 5 183.84 # W
+
+variable	sca equal 0.99
+change_box	all x scale ${sca} y scale ${sca} z scale ${sca} remap
+variable        latparam equal 3.3
 
 # ------------------- FIELD DEFINE -----------------------------
 pair_style        mlip mlip.ini
@@ -65,7 +65,7 @@ group		lobound region lobound
 group		boundary union lobound upbound
 group		mobile subtract all boundary
 
-variable        d equal 10.5
+variable        d equal 1
 variable        mid equal ${zmid}+${latparam}/sqrt(2.)*(${d}-10)
 
 region		upper block INF INF INF INF ${mid} INF units box      #variable

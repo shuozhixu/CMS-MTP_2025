@@ -7,8 +7,6 @@ atom_style      atomic
 
 # ------------------- ATOM DEFINE ------------------------------
 
-#read_data	data.MoNbTa_CSRO
-
 variable        xl equal 0
 variable        xh equal 20
 variable        yl equal 0
@@ -21,15 +19,13 @@ region          mybox block ${xl} ${xh} ${yl} ${yh} ${zl} ${zh}
 
 create_box      5 mybox
 
-mass 1 180.948
-mass 2 92.9064
-mass 3 50.9415
-mass 4 95.94
-mass 5 183.84
+read_data	data.MoNbTa
 
-create_atoms    1 box
-set type 1 type/ratio 2 0.3333 134
-set type 1 type/ratio 4 0.5 384
+mass 1 180.948 # Ta
+mass 2 92.9064 # Nb
+mass 3 50.9415 # V
+mass 4 95.94 # Mo
+mass 5 183.84 # W
 
 # ------------------- FIELD DEFINE -----------------------------
 pair_style        mlip mlip.ini
@@ -44,6 +40,8 @@ neighbor        0.3     bin
 variable r equal 0.8
 
 change_box all x scale $r y scale $r z scale $r remap
+
+shell rm a_E
 
 variable a loop 400
 

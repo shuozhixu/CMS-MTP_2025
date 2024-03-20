@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 #SBATCH --partition=RM
 #SBATCH --nodes=1
 #SBATCH --ntasks=32
@@ -19,7 +19,10 @@ cd ${SLURM_SUBMIT_DIR}
 #module load LAMMPS/11Aug17-gompi-2017b
 #/bin/hostname
 
-module load intelmpi/2021.3.0-intel2021.3.0 gcc/10.2.0 cuda/11.7.1 
+#module load intelmpi/2021.3.0-intel2021.3.0 gcc/10.2.0 cuda/11.7.1 
+
+module load intelmpi/2021.3.0-intel2021.3.0
+module load gcc/10.2.0 python/3.8.6 cuda/11.7.1
 
 #module load intel/2021.3.0
 
