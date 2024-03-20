@@ -109,6 +109,16 @@ Follow the same procedures, we can calculate the lattice parameter and mean USFE
 
 Follow the same procedures, we can calculate the lattice parameters and mean USFE values in the other two ternaries. Don't forget to modify the LAMMPS input files accordingly for each alloy.
 
+## Submission
+
+Once all simulations are finished, for the two MEAs assigned to you, you are required to upload the following to Canvas by mid-night April 25:
+
+- The lattice parameters of the two MEAs
+- All 20 `gsfe` files for each of the two MEAs
+- The mean USFEs of the two MEAs
+- Files `data.MoNbTa`, `data.MoNbV`, `data.NbTaV`, or `data.NbVW`
+- Slides used in your in-class presentation
+
 ## References
 
 If you use any files from this GitHub repository, please cite
