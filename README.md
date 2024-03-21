@@ -1,16 +1,14 @@
-# Unstable stacking fault energies in refractory medium entropy alloys
+# Refractory medium entropy alloys: Moment tensor potential
 
 ## Foreword
 
-The purpose of this project is to calculate the unstable stacking fault energies (USFE) of four equal-molar body-centered cubic (BCC) refractory medium element alloys (MEAs). The effect of chemical short-range order (CSRO) will be considered.
+In this project, we will build the chemical short-range order (CSRO) structures of four equal-molar body-centered cubic (BCC) refractory medium element alloys (MEAs): MoNbTa, MoNbV, NbVW, and NbTaV.
 
-In [a previous project](https://github.com/shuozhixu/Modelling_2024), we calculated the USFEs in MoNbTa, HfMoNbTaTi, and HfNbTaTiZr, respectively; it was found that the CSRO lowers the USFE in MoNbTa but increases the USFEs in the other two alloys. In the meantime, [another work](https://doi.org/10.1038/s41524-023-01046-z) in MoNbTi and NbTaTi showed that the CSRO increases the USFEs, see [Supplementary Figure 10](https://static-content.springer.com/esm/art%3A10.1038%2Fs41524-023-01046-z/MediaObjects/41524_2023_1046_MOESM1_ESM.pdf). 
+[Another project](https://github.com/shuozhixu/CMS_2025) discussed two ways by which CSRO structures can be built. In this project, we will use the second method. We aim to answer the following question:
 
-Through this project, we aim to answer the following question:
+- How does the CSRO affect GSFEs across MEAs?
 
-- How does CSRO affect USFEs across MEAs?
-
-Here, we will investigate four MEAs, including MoNbTa, MoNbV, NbTaV, and NbVW. These MEAs were chosen for their stable BCC structures. The USFEs of the four MEAs have been calculated using their random structures, as
+The peak value of a $\left<111\right>$ GSFE curve in a BCC crystal is the unstable stacking fault energy (USFE). The USFEs of the four MEAs have been calculated in their random structures, as
 
 - MoNbTa
 	- [DFT](https://doi.org/10.3390/modelling5010019): 1055 mJ/m<sup>2</sup>
@@ -25,9 +23,9 @@ Here, we will investigate four MEAs, including MoNbTa, MoNbV, NbTaV, and NbVW. T
 	- [DFT](https://doi.org/10.1063/5.0157728): 1008 mJ/m<sup>2</sup>
 	- MTP:
 
-[The MTP calculations are being performed by another student, who will have all data ready by April 20th]
+[The MTP calculations are being performed by [another student](https://github.com/shuozhixu/USFE_2025), who will have all data ready by April 20th]
 
-Therefore, in this project, we will calculate the USFEs of these four MEAs in their CSRO structures.
+Therefore, in this project, we will calculate the USFEs of the four MEAs in their CSRO structures using MTP.
 
 ## LAMMPS
 
@@ -37,13 +35,11 @@ To install LAMMPS with MLIP, use the file `MLIP.sh` in the `MTP/` directory in t
 
 	sh MLIP.sh
 
-Note that the second command in `MLIP.sh` will load two modules. If you cannot load them, try `module purge` first.
+Note that the second command in `MLIP.sh` will load four modules. If one cannot load them, try `module purge` first.
 
-Once the `sh` run is finished, you should find a file `lmp_intel_cpu_intelmpi` in the `lammps-mtp/interface-lammps-mlip-2/` directory. And that is the LAMMPS executable with MLIP.
+Once the `sh` run is finished, we will find a file `lmp_intel_cpu_intelmpi` in the `lammps-mtp/interface-lammps-mlip-2/` directory. And that is the LAMMPS executable with MLIP.
 
-## Ternaries
-
-All four ternaries are equal-molar.
+## Simulations
 
 Cliff Hirt
 
@@ -59,9 +55,9 @@ The file `lmp_psc.batch` can be used to submit a LAMMPS simulation. Remember to 
 
 #### Build the CSRO structure
 
-The first step is to build the CSRO MoNbTa structure using a a hybrid molecular dynamics (MD) / Monte Carlo (MC) simulation. For that, we run a LAMMPS simulation using `data.random`, `lmp_MoNbTa.in`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. All five files can be found in this GitHub repository. The first two files can be found in the `csro/` directory while the last two in the `MTP/` directory.
+Here, we build the CSRO MoNbTa structure using an equilibrium Monte Carlo (MC) simulation using `data.random`, `lmp_MoNbTa.in`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. All five files can be found in this GitHub repository. The first two files can be found in the `csro/` directory while the last two in the `MTP/` directory.
 
-Once the simulation is finished, we will find a file `data.MoNbTa_CSRO`, which will used later.
+Once the simulation is finished, we will find a file `data.MoNbTa_CSRO`, which will be used later.
 
 #### Lattice parameter
 
@@ -88,7 +84,7 @@ The simulation requires files
 
 Modify `lmp_gsfe.in`:
 
-- line 36, replace the number `3.3` by $a_0$
+- line 36, replace the number `3.3` with $a_0$
 
 Then run the simulation. Once it is finished, we will find a new file `gsfe_ori`. Run
 
@@ -100,32 +96,32 @@ which would yield a new file `gsfe`. The first column is the displacement along 
 
 According to [this paper](http://dx.doi.org/10.1016/j.intermet.2020.106844), in an alloy, multiple GSFE curves should be calculated. Hence, we need to make one more change to `lmp_gsfe.in`:
 
-- line 68, replace the number `1` by `2`
+- line 68, replace the number `1` with `2`
 
 Then run the simulation and obtain another USFE value.
 
-We can then replace that number by `3`, `4`, `5`, ..., `20`, respectively. It follows that we run 18 more simulations. Eventually, we obtain 20 USFE values in total. We then calculate the mean USFE value for MoNbTa.
+We can then replace that number with `3`, `4`, `5`, ..., `20`, respectively. It follows that we run 18 more simulations. Eventually, we obtain 20 USFE values in total. We then calculate the mean USFE value for MoNbTa.
 
 ### NbVW
 
 Follow the same procedures, we can calculate the lattice parameter and mean USFE value in NbVW. The following changes should be made:
 
-- To build the CSRO structure, we use `lmp_NbVW.in`; the simulation will generate a file `data.NbVW`
-- In calculating the lattice parameter, we use the file `data.NbVW` and write the correct file name in line 22 of the file `lmp_0K.in`
-- In calculating the GSFEs, we use the file `data.NbVW` and write the correct file name in line 28 of the file `lmp_gsfe.in`
+- To build the CSRO structure, we use the input file `lmp_NbVW.in`; the simulation will generate a file `data.NbVW_CSRO`
+- In calculating the lattice parameter, we use the data file `data.NbVW_CSRO`
+- In calculating the GSFEs, we use the data file `data.NbVW_CSRO` and write the correct file name in line 28 of the file `lmp_gsfe.in`, whose line 36 should involve the lattice parameter of NbVW
 
 ### Other two ternaries
 
-Follow the same procedures, we can calculate the lattice parameters and mean USFE values in the other two ternaries. Don't forget to modify the LAMMPS input files accordingly for each alloy.
+Follow the same procedures, we can calculate the lattice parameters and mean USFE values in the other two ternaries. Remember to modify files accordingly for each alloy.
 
 ## Submission
 
-Once all simulations are finished, for the two MEAs assigned to you, you are required to upload the following to Canvas by mid-night April 25:
+Once all simulations are finished, for the two MEAs assigned to you, please upload the following to Canvas by mid-night April 25:
 
 - The lattice parameters of the two MEAs
+- Files `data.MoNbTa_CSRO`, `data.MoNbV_CSRO`, `data.NbTaV_CSRO`, and/or `data.NbVW_CSRO`
 - All 20 `gsfe` files for each of the two MEAs
 - The mean USFEs of the two MEAs
-- Files `data.MoNbTa_CSRO`, `data.MoNbV`, `data.NbTaV`, or `data.NbVW`
 - Slides used in your in-class presentation
 
 ## References
