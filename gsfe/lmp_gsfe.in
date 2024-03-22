@@ -13,18 +13,6 @@ atom_style      atomic
 
 # ------------------- ATOM DEFINE ------------------------------
 
-variable        xl equal 0
-variable        xh equal 2
-variable        yl equal 0
-variable        yh equal 2
-variable        zl equal 0
-variable        zh equal 8
-
-#lattice         bcc ${latparam} orient x 1 1 -2 orient y 1 1 1 orient z 1 -1 0
-region          mybox block ${xl} ${xh} ${yl} ${yh} ${zl} ${zh}
-
-create_box      5 mybox
-
 read_data	data.MoNbTa_CSRO
 
 mass 1 180.948 # Ta

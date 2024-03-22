@@ -71,7 +71,7 @@ where
 	ly = yhi - ylo
 	lz = zhi - zlo
 
-where `lx`, `ly`, and `lz` can be found in the first few lines of the data file `data.HfNbTa_CSRO`.
+where `lx`, `ly`, and `lz` can be found in the first few lines of the data file `data.MoNbTa_CSRO`.
 
 Let's denote the lattice parameter as $a_0$.
 
@@ -84,7 +84,7 @@ The simulation requires files
 
 Modify `lmp_gsfe.in`:
 
-- line 36, replace the number `3.3` with $a_0$
+- line 24, replace the number `3.3` with $a_0$
 
 Then run the simulation. Once it is finished, we will find a new file `gsfe_ori`. Run
 
@@ -96,7 +96,7 @@ which would yield a new file `gsfe`. The first column is the displacement along 
 
 According to [this paper](http://dx.doi.org/10.1016/j.intermet.2020.106844), in an alloy, multiple GSFE curves should be calculated. Hence, we need to make one more change to `lmp_gsfe.in`:
 
-- line 68, replace the number `1` with `2`
+- line 54, replace the number `1` with `2`
 
 Then run the simulation and obtain another USFE value.
 
@@ -108,7 +108,7 @@ Follow the same procedures, we can calculate the lattice parameter and mean USFE
 
 - To build the CSRO structure, we use the input file `lmp_NbVW.in`; the simulation will generate a file `data.NbVW_CSRO`
 - In calculating the lattice parameter, we use the data file `data.NbVW_CSRO`
-- In calculating the GSFEs, we use the data file `data.NbVW_CSRO` and write the correct file name in line 28 of the file `lmp_gsfe.in`, whose line 36 should involve the lattice parameter of NbVW
+- In calculating the GSFEs, we use the data file `data.NbVW_CSRO` and write the correct file name in line 16 of the file `lmp_gsfe.in`, whose line 24 should involve the lattice parameter of NbVW
 
 ### Other two ternaries
 
