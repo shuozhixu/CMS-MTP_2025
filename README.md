@@ -55,7 +55,7 @@ The file `lmp_psc.batch` can be used to submit a LAMMPS simulation. Remember to 
 
 #### Build the CSRO structure
 
-Here, we build the CSRO MoNbTa structure using an equilibrium Monte Carlo (MC) simulation using `data.random`, `lmp_MoNbTa.in`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. All five files can be found in this GitHub repository. The first two files can be found in the `csro_second/` directory while the last two in the `MTP/` directory.
+Here, we build the CSRO MoNbTa structure using a hybrid molecular dynamics / Monte Carlo simulation using `data.random`, `lmp_MoNbTa.in`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. All five files can be found in this GitHub repository. The first two files can be found in the `csro_second/` directory while the last two in the `MTP/` directory.
 
 Once the simulation is finished, we will find a file `data.MoNbTa_CSRO`, which will be used later.
 
