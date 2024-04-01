@@ -24,6 +24,7 @@ thermo 1000
 thermo_style custom step pe ke etotal time cpu tpcpu
 dump 1 all custom 20000 dump.* id type x y z
 run 150000
+unfix temp
 min_style cg
 fix 0 all box/relax aniso 0 vmax 0.001
 minimize 0 1e-2 100000 100000
