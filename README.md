@@ -31,7 +31,7 @@ Therefore, in this project, we will calculate the USFEs of the four MEAs in thei
 
 LAMMPS on [Bridges-2](https://www.psc.edu/resources/bridges-2/user-guide/) likely does not come with many packages. To finish this project, the [MLIP](https://mlip.skoltech.ru) package is needed.
 
-To install LAMMPS with MLIP, use the file `MLIP.sh` in the `MTP/` directory in this GitHub repository. First, cd to any directory on OSCER, e.g., \$HOME, then
+To install LAMMPS with MLIP, use the file `MLIP.sh` in the `MTP/` directory in this GitHub repository. First, cd to any directory on Bridges-2, e.g., \$HOME, then
 
 	sh MLIP.sh
 
