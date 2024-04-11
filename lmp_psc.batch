@@ -2,7 +2,7 @@
 
 #SBATCH --partition=RM
 #SBATCH --nodes=4
-#SBATCH --ntasks=32
+#SBATCH --ntasks-per-node=32
 #SBATCH --time=72:00:00
 #SBATCH --output=lmp.out
 #SBATCH --error=lmp.err
