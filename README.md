@@ -1,12 +1,10 @@
-# Refractory medium entropy alloys: Moment tensor potential
+# Non-dilute random alloys: Moment tensor potential
 
 ## Foreword
 
-In this project, we will build the chemical short-range order (CSRO) structures of four equal-molar body-centered cubic (BCC) refractory medium element alloys (MEAs): MoNbTa, MoNbV, NbVW, and NbTaV.
+In this project, we will study the effect of the chemical short-range order (CSRO) on lattice parameter and generalized stacking fault energy (GSFE) in four equal-molar body-centered cubic (BCC) refractory medium element alloys (MEAs): MoNbTa, MoNbV, NbVW, and NbTaV.
 
-[Another project](https://github.com/shuozhixu/CMS_2025) discussed two ways by which CSRO structures can be built. In this project, we will use the second method. We aim to answer the following question:
-
-- How does the CSRO affect GSFEs across MEAs?
+[Another project](https://github.com/shuozhixu/CMS_2025) answered two questions while using the embedded-atom method (EAM) potential. This project aims to assess if those answers depend on the interatomic potential. Specifically, we will employ [a moment tensor potential (MTP)](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model).
 
 The peak value of a $\left<111\right>$ GSFE curve in a BCC crystal is the unstable stacking fault energy (USFE). The USFEs of the four MEAs have been calculated in their random structures, as
 
@@ -25,7 +23,7 @@ The peak value of a $\left<111\right>$ GSFE curve in a BCC crystal is the unstab
 
 [The MTP calculations are being performed by [another student](https://github.com/shuozhixu/USFE_2025), who will have all data ready by April 20th]
 
-Therefore, in this project, we will calculate the USFEs of the four MEAs in their CSRO structures using MTP.
+Therefore, in this project, we will build CSRO structures for the four MEAs and calculate their USFEs using MTP.
 
 ## LAMMPS
 
