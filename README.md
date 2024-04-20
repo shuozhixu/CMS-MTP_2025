@@ -6,22 +6,22 @@ In this project, we will study the effect of the chemical short-range order (CSR
 
 [Another project](https://github.com/shuozhixu/CMS_2025) answered two questions while using the embedded-atom method (EAM) potential. This project aims to assess if those answers depend on the interatomic potential. Specifically, we will employ [a moment tensor potential (MTP)](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model).
 
-The peak value of a $\left<111\right>$ GSFE curve in a BCC crystal is the unstable stacking fault energy (USFE). The USFEs of the four MEAs have been calculated in their random structures, as
+The peak value of a $\left<111\right>$ GSFE curve in a BCC crystal is the unstable stacking fault energy (USFE). The lattice parameters and USFEs of the four MEAs have been calculated in their random structures, as
 
 - MoNbTa
-	- [DFT](https://doi.org/10.3390/modelling5010019): 1055 mJ/m<sup>2</sup>
+	- [DFT](https://doi.org/10.3390/modelling5010019): 3.26 &#8491;, 1055 mJ/m<sup>2</sup>
 	- MTP: 
 - MoNbV
-	- [DFT](https://doi.org/10.1063/5.0157728): 1046 mJ/m<sup>2</sup>
+	- [DFT](https://doi.org/10.1063/5.0157728): 3.156 &#8491;, 1046 mJ/m<sup>2</sup>
 	- MTP: 
 - NbTaV
-	- [DFT](https://doi.org/10.1016/j.commatsci.2024.112886): 644 mJ/m<sup>2</sup>
+	- DFT: [3.222 &#8491;](https://doi.org/10.1016/j.msea.2023.145841), [644 mJ/m<sup>2</sup>]((https://doi.org/10.1016/j.commatsci.2024.112886))
 	- MTP:
 - NbVW
-	- [DFT](https://doi.org/10.1063/5.0157728): 1008 mJ/m<sup>2</sup>
+	- [DFT](https://doi.org/10.1063/5.0157728): 3.164 &#8491;, 1008 mJ/m<sup>2</sup>
 	- MTP:
 
-[The MTP calculations are being performed by [another student](https://github.com/shuozhixu/USFE_2025), who will have all data ready by April 20th]
+The MTP calculations were done in [another project](https://github.com/shuozhixu/USFE_2025).
 
 Therefore, in this project, we will build CSRO structures for the four MEAs and calculate their USFEs using MTP.
 
@@ -114,7 +114,7 @@ Follow the same procedures, we can calculate the lattice parameters and mean USF
 
 ## Submission
 
-Once all simulations are finished, for the two MEAs assigned to you, please upload the following to Canvas by mid-night April 25:
+Once all simulations are finished, for the two MEAs assigned to you, please upload the following to Canvas by mid-night May 2nd:
 
 - The lattice parameters of the two MEAs
 - Files `data.MoNbTa_CSRO`, `data.MoNbV_CSRO`, `data.NbTaV_CSRO`, and/or `data.NbVW_CSRO`
@@ -122,7 +122,7 @@ Once all simulations are finished, for the two MEAs assigned to you, please uplo
 - The mean USFEs of the two MEAs
 - Slides used in your in-class presentation
 
-## References
+## Reference
 
 If you use any files from this GitHub repository, please cite
 
