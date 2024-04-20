@@ -15,7 +15,7 @@ The peak value of a $\left<111\right>$ GSFE curve in a BCC crystal is the unstab
 	- [DFT](https://doi.org/10.1063/5.0157728): 3.156 &#8491;, 1046 mJ/m<sup>2</sup>
 	- MTP: 
 - NbTaV
-	- DFT: [3.222 &#8491;](https://doi.org/10.1016/j.msea.2023.145841), [644 mJ/m<sup>2</sup>]((https://doi.org/10.1016/j.commatsci.2024.112886))
+	- DFT: [3.222 &#8491;](https://doi.org/10.1016/j.msea.2023.145841), [644 mJ/m<sup>2</sup>](https://doi.org/10.1016/j.commatsci.2024.112886)
 	- MTP:
 - NbVW
 	- [DFT](https://doi.org/10.1063/5.0157728): 3.164 &#8491;, 1008 mJ/m<sup>2</sup>
