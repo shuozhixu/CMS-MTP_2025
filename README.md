@@ -122,6 +122,19 @@ Once all simulations are finished, for the two MEAs assigned to you, please uplo
 - The mean USFEs of the two MEAs
 - Slides used in your in-class presentation
 
+## Results
+
+Results based on CSRO structures are as follows
+
+- MoNbTa
+	- MTP: xx &#8491;, xx mJ/m<sup>2</sup>
+- MoNbV
+	- MTP: xx &#8491;, xx mJ/m<sup>2</sup>
+- NbTaV
+	- MTP: 3.225 &#8491;, 895.1036 mJ/m<sup>2</sup>
+- NbVW
+	- MTP: 3.172 &#8491;, 1294.256 mJ/m<sup>2</sup>
+
 ## Reference
 
 If you use any files from this GitHub repository, please cite
