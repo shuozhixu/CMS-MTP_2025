@@ -53,7 +53,7 @@ The file `lmp_psc.batch` can be used to submit a LAMMPS simulation. Remember to 
 
 #### Build the CSRO structure
 
-Here, we build the CSRO MoNbTa structure using a hybrid molecular dynamics / Monte Carlo simulation using `data.random`, `lmp_MoNbTa.in`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. All five files can be found in this GitHub repository. The last two files were retrieved from [another GitHub repository](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model). The first two files can be found in the `csro_second/` directory while the last two in the `MTP/` directory.
+Here, we build the CSRO MoNbTa structure using a hybrid molecular dynamics / Monte Carlo simulation using `data.random`, `lmp_MoNbTa.in`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. All five files can be found in this GitHub repository. The last two files were retrieved from [another GitHub repository](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model). The first two files can be found in the `csro/` directory while the last two in the `MTP/` directory.
 
 Once the simulation is finished, we will find a file `data.MoNbTa_CSRO`, which will be used later.
 
@@ -78,7 +78,7 @@ Let's denote the lattice parameter as $a_0$.
 ##### Plane 1
 
 The simulation requires files 
-`lmp_gsfe.in`, `data.MoNbTa_CSRO`, `lmp_sgc.batch`, `fitted.mtp`, and `mlip.ini`. The first file can be found in the `gsfe/` directory in this GitHub repository.
+`lmp_gsfe.in`, `data.MoNbTa_CSRO`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. The first file can be found in the `gsfe/` directory in this GitHub repository.
 
 Modify `lmp_gsfe.in`:
 
