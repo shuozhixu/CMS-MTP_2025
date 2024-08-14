@@ -112,24 +112,14 @@ Follow the same procedures, we can calculate the lattice parameter and mean USFE
 
 Follow the same procedures, we can calculate the lattice parameters and mean USFE values in the other two ternaries. Remember to modify files accordingly for each alloy.
 
-## Submission
-
-Once all simulations are finished, for the two MEAs assigned to you, please upload the following to Canvas by mid-night May 2nd:
-
-- The lattice parameters of the two MEAs
-- Files `data.MoNbTa_CSRO`, `data.MoNbV_CSRO`, `data.NbTaV_CSRO`, and/or `data.NbVW_CSRO`
-- All 20 `gsfe` files for each of the two MEAs
-- The mean USFEs of the two MEAs
-- Slides used in your in-class presentation
-
 ## Results
 
 Results based on CSRO structures are as follows
 
 - MoNbTa
-	- MTP: xx &#8491;, xx mJ/m<sup>2</sup>
+	- MTP: 3.263 &#8491;, xx mJ/m<sup>2</sup>
 - MoNbV
-	- MTP: xx &#8491;, xx mJ/m<sup>2</sup>
+	- MTP: 3.167 &#8491;, xx mJ/m<sup>2</sup>
 - NbTaV
 	- MTP: 3.225 &#8491;, 895.1036 mJ/m<sup>2</sup>
 - NbVW
