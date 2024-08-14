@@ -37,18 +37,6 @@ Note that the second command in `MLIP.sh` will load four modules. If one cannot 
 
 Once the `sh` run is finished, we will find a file `lmp_intel_cpu_intelmpi` in the `lammps-mtp/interface-lammps-mlip-2/` directory. And that is the LAMMPS executable with MLIP.
 
-## Simulations
-
-Cliff Hirt
-
-- MoNbTa and MoNbV
-
-Richard Brinlee
-
-- NbVW and NbTaV
-
-The file `lmp_psc.batch` can be used to submit a LAMMPS simulation. Remember to use the correct LAMMPS input file at the end of line 33.
-
 ### MoNbTa
 
 #### Build the CSRO structure
@@ -112,7 +100,9 @@ Follow the same procedures, we can calculate the lattice parameter and mean USFE
 
 Follow the same procedures, we can calculate the lattice parameters and mean USFE values in the other two ternaries. Remember to modify files accordingly for each alloy.
 
-## Results
+## Contributors and results
+
+Main contributors include Cliff Hirt and Richard Brinlee, who ran simulations for the final project in Dr. Shuozhi Xu's [Computational Materials Science course in Spring 2024](https://shuozhixu.github.io/teaching/spring-2024/AME4970-5970-Syllabus.pdf) at the University of Oklahoma.
 
 Results based on CSRO structures are as follows
 
