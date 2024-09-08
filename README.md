@@ -2,9 +2,9 @@
 
 ## Foreword
 
-In this project, we will study the effect of the chemical short-range order (CSRO) on lattice parameter and generalized stacking fault energy (GSFE) in four equal-molar body-centered cubic (BCC) refractory medium element alloys (MEAs): MoNbTa, MoNbV, NbVW, and NbTaV.
+In this repository, we will study the effect of the chemical short-range order (CSRO) on lattice parameter and generalized stacking fault energy (GSFE) in four equal-molar body-centered cubic (BCC) refractory medium element alloys (MEAs): MoNbTa, MoNbV, NbVW, and NbTaV.
 
-[Another project](https://github.com/shuozhixu/CMS_2025) answered two questions while using the embedded-atom method (EAM) potential. This project aims to assess if those answers depend on the interatomic potential. Specifically, we will employ [a moment tensor potential (MTP)](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model) developed by [Wang et al.](https://doi.org/10.1038/s41524-024-01330-6)
+[Another GitHub repository](https://github.com/shuozhixu/CMS_2025) answered two questions while using the embedded-atom method (EAM) potential. This repository aims to assess if those answers depend on the interatomic potential. Specifically, we will employ [a moment tensor potential (MTP)](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model) developed by [Wang et al.](https://doi.org/10.1038/s41524-024-01330-6)
 
 The peak value of a $\left<111\right>$ GSFE curve in a BCC crystal is the unstable stacking fault energy (USFE). The lattice parameters and USFEs of the four MEAs have been calculated in their random structures, as
 
@@ -23,11 +23,11 @@ The peak value of a $\left<111\right>$ GSFE curve in a BCC crystal is the unstab
 
 The MTP calculations were done in [another project](https://github.com/shuozhixu/USFE_2025).
 
-Therefore, in this project, we will build CSRO structures for the four MEAs and calculate their USFEs using MTP.
+Therefore, here, we will build CSRO structures for the four MEAs and calculate their USFEs using MTP.
 
 ## LAMMPS
 
-LAMMPS on [Bridges-2](https://www.psc.edu/resources/bridges-2/user-guide/) likely does not come with many packages. To finish this project, the [MLIP](https://mlip.skoltech.ru) package is needed.
+LAMMPS on [Bridges-2](https://www.psc.edu/resources/bridges-2/user-guide/) likely does not come with many packages. To finish tasks in this repository, the [MLIP](https://mlip.skoltech.ru) package is needed.
 
 To install LAMMPS with MLIP, use the file `MLIP.sh` in the `MTP/` directory in this GitHub repository. First, cd to any directory on Bridges-2, e.g., \$HOME, then
 
@@ -107,9 +107,9 @@ Main contributors include Cliff Hirt and Richard Brinlee, who ran simulations fo
 Results based on CSRO structures are as follows
 
 - MoNbTa
-	- MTP: 3.263 &#8491;, xx mJ/m<sup>2</sup>
+	- MTP: 3.263 &#8491;, 1328.71 mJ/m<sup>2</sup>
 - MoNbV
-	- MTP: 3.167 &#8491;, xx mJ/m<sup>2</sup>
+	- MTP: 3.167 &#8491;, 1235.99 mJ/m<sup>2</sup>
 - NbTaV
 	- MTP: 3.225 &#8491;, 895.1036 mJ/m<sup>2</sup>
 - NbVW
