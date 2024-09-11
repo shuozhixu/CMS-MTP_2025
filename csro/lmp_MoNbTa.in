@@ -27,6 +27,6 @@ run 500000
 unfix temp
 min_style cg
 fix 0 all box/relax aniso 0 vmax 0.001
-minimize 0 1e-2 100000 100000
+minimize 0 0 100000 100000
 write_data data.MoNbTa_CSRO
 print "all done"
