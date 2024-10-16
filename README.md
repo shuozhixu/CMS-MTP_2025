@@ -37,15 +37,15 @@ Note that the second command in `MLIP.sh` will load four modules. If one cannot 
 
 Once the `sh` run is finished, we will find a file `lmp_intel_cpu_intelmpi` in the `lammps-mtp/interface-lammps-mlip-2/` directory. And that is the LAMMPS executable with MLIP.
 
-### MoNbTa
+## MoNbTa
 
-#### Build the CSRO structure
+### Build the CSRO structure
 
 Here, we build the CSRO MoNbTa structure using a hybrid molecular dynamics / Monte Carlo simulation using `data.random`, `lmp_MoNbTa.in`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. All five files can be found in this GitHub repository. The last two files were retrieved from [another GitHub repository](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model). The first two files can be found in the `csro/` directory while the last two in the `MTP/` directory.
 
 Once the simulation is finished, we will find a file `data.MoNbTa_CSRO`, which will be used later.
 
-#### Lattice parameter
+### Lattice parameter
 
 The lattice parameter of MoNbTa can be calculated by
 
@@ -61,9 +61,9 @@ where `lx`, `ly`, and `lz` can be found in the first few lines of the data file 
 
 Let's denote the lattice parameter as $a_0$.
 
-#### Generalized stacking fault energy (GSFE)
+### GSFE
 
-##### Plane 1
+#### Plane 1
 
 The simulation requires files 
 `lmp_gsfe.in`, `data.MoNbTa_CSRO`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. The first file can be found in the `gsfe/` directory in this GitHub repository.
@@ -78,7 +78,7 @@ Then run the simulation. Once it is finished, we will find a new file `gsfe_ori`
 
 which would yield a new file `gsfe`. The first column is the displacement along the $\left<111\right>$ direction while the second column is the GSFE value, in units of mJ/m<sup>2</sup>. The USFE is the peak GSFE value.
 
-##### Other planes
+#### Other planes
 
 According to [this paper](http://dx.doi.org/10.1016/j.intermet.2020.106844), in an alloy, multiple GSFE curves should be calculated. Hence, we need to make one more change to `lmp_gsfe.in`:
 
@@ -88,7 +88,7 @@ Then run the simulation and obtain another USFE value.
 
 We can then replace that number with `3`, `4`, `5`, ..., `20`, respectively. It follows that we run 18 more simulations. Eventually, we obtain 20 USFE values in total. We then calculate the mean USFE value for MoNbTa.
 
-### NbVW
+## NbVW
 
 Follow the same procedures, we can calculate the lattice parameter and mean USFE value in NbVW. The following changes should be made:
 
@@ -96,13 +96,11 @@ Follow the same procedures, we can calculate the lattice parameter and mean USFE
 - In calculating the lattice parameter, we use the data file `data.NbVW_CSRO`
 - In calculating the GSFEs, we use the data file `data.NbVW_CSRO` and write the correct file name in line 16 of the file `lmp_gsfe.in`, whose line 24 should involve the lattice parameter of NbVW
 
-### Other two ternaries
+## Other two ternaries
 
 Follow the same procedures, we can calculate the lattice parameters and mean USFE values in the other two ternaries. Remember to modify files accordingly for each alloy.
 
-## Contributors and results
-
-Main contributors include Cliff Hirt and Richard Brinlee, who ran simulations for the final project in Dr. Shuozhi Xu's [Computational Materials Science course in Spring 2024](https://shuozhixu.github.io/teaching/spring-2024/AME4970-5970-Syllabus.pdf) at the University of Oklahoma.
+## Results
 
 Results based on CSRO structures are as follows
 
@@ -114,6 +112,10 @@ Results based on CSRO structures are as follows
 	- MTP: 3.225 &#8491;, 895.1036 mJ/m<sup>2</sup>
 - NbVW
 	- MTP: 3.172 &#8491;, 1294.256 mJ/m<sup>2</sup>
+
+## Contributors
+
+Main contributors include Cliff Hirt, Richard Brinlee, and Amin Poozesh, who ran simulations for the final project in Dr. Shuozhi Xu's [Computational Materials Science course in Spring 2024](https://shuozhixu.github.io/teaching/spring-2024/AME4970-5970-Syllabus.pdf) at the University of Oklahoma.
 
 ## Reference
 
