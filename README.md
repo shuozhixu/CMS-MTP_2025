@@ -41,7 +41,7 @@ Once the `sh` run is finished, we will find a file `lmp_intel_cpu_intelmpi` in t
 
 ### Build the CSRO structure
 
-Here, we build the CSRO MoNbTa structure using a hybrid molecular dynamics / Monte Carlo simulation using `data.random`, `lmp_MoNbTa.in`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. All five files can be found in this GitHub repository. The last two files were retrieved from [another GitHub repository](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model). The first two files can be found in the `csro/` directory while the last two in the `MTP/` directory.
+Here, we build the CSRO MoNbTa structure using a hybrid molecular dynamics / Monte Carlo simulation using `data.random`, `lmp_MoNbTa.in`, `lmp_psc.batch`, `fitted.mtp`, and `mlip.ini`. All five files can be found in this GitHub repository. The first two files can be found in the `csro/` directory while the last two in the `MTP/` directory. The last two files were retrieved from [another GitHub repository](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model). 
 
 Once the simulation is finished, we will find a file `data.MoNbTa_CSRO`, which will be used later.
 
