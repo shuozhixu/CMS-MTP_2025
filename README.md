@@ -4,7 +4,7 @@
 
 In this repository, we will study the effect of the chemical short-range order (CSRO) on lattice parameter and unstable stacking fault energy (USFE) in four equal-molar body-centered cubic (BCC) refractory medium element alloys (MEAs): MoNbTa, MoNbV, NbVW, and NbTaV.
 
-[Another GitHub repository](https://github.com/shuozhixu/CMS_2025) answered two questions while using the embedded-atom method (EAM) potential. This repository aims to assess if those answers depend on the interatomic potential. Specifically, we will employ [a moment tensor potential (MTP)](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model) developed by [Wang et al.](https://doi.org/10.1038/s41524-024-01330-6)
+[Another GitHub repository](https://github.com/shuozhixu/CMS-EAM_2025) answered two questions while using the embedded-atom method (EAM) potential. This repository aims to assess if those answers depend on the interatomic potential. Specifically, we will employ [a moment tensor potential (MTP)](https://github.com/ucsdlxg/MoNbTaVW-ML-interatomic-potential-and-CRSS-ML-model) developed by [Wang et al.](https://doi.org/10.1038/s41524-024-01330-6)
 
 The peak value of a $\left<111\right>$ generalized stacking fault energy (GSFE) curve in a BCC crystal is the USFE. The lattice parameters and USFEs of the four MEAs have been calculated in their random structures, as
 
