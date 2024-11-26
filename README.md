@@ -10,16 +10,16 @@ The peak value of a $\left<111\right>$ generalized stacking fault energy (GSFE) 
 
 - MoNbTa
 	- [DFT](https://doi.org/10.3390/modelling5010019): 3.26 &#8491;, 1055 mJ/m<sup>2</sup>
-	- MTP: 3.2637 &#8491;, 1141.82 mJ/m<sup>2</sup>
+	- MTP: 3.2637 &#8491;, 1252.88 mJ/m<sup>2</sup>
 - MoNbV
 	- [DFT](https://doi.org/10.1063/5.0157728): 3.156 &#8491;, 1046 mJ/m<sup>2</sup>
-	- MTP: 3.1693 &#8491;, 1065.13 mJ/m<sup>2</sup>
+	- MTP: 3.1693 &#8491;, 1207.54 mJ/m<sup>2</sup>
 - NbTaV
 	- DFT: [3.222 &#8491;](https://doi.org/10.1016/j.msea.2023.145841), [644 mJ/m<sup>2</sup>](https://doi.org/10.1016/j.commatsci.2024.112886)
-	- MTP: 3.2307 &#8491;, 781.599 mJ/m<sup>2</sup>
+	- MTP: 3.2307 &#8491;, 769.61 mJ/m<sup>2</sup>
 - NbVW
 	- [DFT](https://doi.org/10.1063/5.0157728): 3.164 &#8491;, 1008 mJ/m<sup>2</sup>
-	- MTP: 3.1769 &#8491;, 1129.558 mJ/m<sup>2</sup> 
+	- MTP: 3.1769 &#8491;, 1267.01 mJ/m<sup>2</sup> 
 
 The MTP calculations were done in [another project](https://github.com/shuozhixu/USFE_2025).
 
