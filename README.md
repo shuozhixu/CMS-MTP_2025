@@ -115,7 +115,7 @@ Results based on CSRO structures are as follows
 
 ## Contributors
 
-Main contributors include Cliff Hirt, Richard Brinlee, and Amin Poozesh, who ran simulations for the final project in Dr. Shuozhi Xu's [Computational Materials Science course in Spring 2024](https://shuozhixu.github.io/teaching/spring-2024/AME4970-5970-Syllabus.pdf) at the University of Oklahoma.
+Main contributors are Cliff Hirt and Richard Brinlee, who ran simulations for the final project in Dr. Shuozhi Xu's [Computational Materials Science course in Spring 2024](https://shuozhixu.github.io/teaching/spring-2024/AME4970-5970-Syllabus.pdf) at the University of Oklahoma.
 
 ## Reference
 
